@@ -1,0 +1,3 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultReportFile Tables="files-with-file-tags,files-with-tag-project,files-without-filetags,undefined-file-tags,unused-file-tags,used-file-tags" Comment="This template includes all reports in the Condition Tags group. Once the new report file is created, you can enable or disable any report from any group.">
+</CatapultReportFile>

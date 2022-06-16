@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConfluenceImport
+  ImportFolder="Topics\Confluence"
+  Server="docguy.atlassian.net"
+  SelectedSpace="DT"
+  ImportLinkedHtmlFiles="false"
+  ImportResources="true"
+  KeepSourceLinks="true"
+  ImportTopics="content"
+  LastImport="2022-06-11T23:55:29.8409584-06:00"
+  ImportTopicsLocation="Content/Topics/Confluence"
+  RemoveInlineFormatting="true">
+  <Files>
+    <Url
+      Source="https://docguy.atlassian.net/wiki/spaces/DT/pages/163841"
+      AbsoluteSource="https://docguy.atlassian.net/wiki/spaces/DT/pages/163841" />
+    <Url
+      Source="https://docguy.atlassian.net/wiki/spaces/DT/pages/196626"
+      AbsoluteSource="https://docguy.atlassian.net/wiki/spaces/DT/pages/196626" />
+  </Files>
+  <ExcludedFiles />
+  <CollectedSourceFiles />
+  <SkippedSourceFiles />
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Topics/Confluence/System_Requirements.htm"
+      TimeStamp="6/11/2022 11:55:24 PM" />
+    <Url
+      Source="../../Content/Topics/Confluence/Readme.htm"
+      TimeStamp="6/11/2022 11:55:24 PM" />
+    <Url
+      Source="../TOCs/Confluence-ReleaseDocs.fltoc"
+      TimeStamp="6/11/2022 11:55:29 PM" />
+    <Url
+      Source="../../Content/Resources/List-view.png?fit=1204%2C700&amp;ssl=1"
+      TimeStamp="6/11/2022 11:55:24 PM" />
+  </GeneratedFiles>
+</ConfluenceImport>

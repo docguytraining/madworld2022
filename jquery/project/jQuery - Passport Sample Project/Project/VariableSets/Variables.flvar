@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+  <Variable
+    Comment=""
+    Name="CompanyName">MadCap Software</Variable>
+  <Variable
+    Comment=""
+    Name="PhoneNumber">858 123 4567</Variable>
+  <Variable
+    Name="productName"
+    Comment=""
+    EvaluatedDefinition="Widgets R Us">Widgets R Us</Variable>
+  <Variable
+    Name="productVersion"
+    Comment=""
+    EvaluatedDefinition="2022 R1">2022 R1</Variable>
+  <Variable
+    Name="Copyright"
+    Comment=""
+    Type="DateTime"
+    LastUpdated="2022-06-15T11:19:02.1288439-06:00"
+    EvaluatedDefinition="y">y</Variable>
+</CatapultVariableSet>

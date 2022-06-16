@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultSkin Version="4" SkinType="WebHelp2" ComponentType="MasterPage" TemplateName="Fluid" Comment="HTML5 Top Navigation skin" EnableResponsiveOutput="True">
+    <WebHelpOptions NavigationPanePosition="Right" />
+    <Stylesheet>
+        <Styles>
+            <Style Name="Main Page">
+                <Properties>
+                    <Property Name="MaxWidth">80em</Property>
+                </Properties>
+            </Style>
+            <Style Name="Header">
+                <Properties>
+                    <Property Name="BackgroundColor">#4682b4</Property>
+                </Properties>
+            </Style>
+            <Style Name="Menu">
+                <Properties>
+                    <Property Name="FontSize">13px</Property>
+                </Properties>
+            </Style>
+            <Style Name="Search Submit Button">
+                <Properties>
+                    <Property Name="BackgroundColor">#40e0d0</Property>
+                </Properties>
+            </Style>
+        </Styles>
+    </Stylesheet>
+    <Strings />
+</CatapultSkin>

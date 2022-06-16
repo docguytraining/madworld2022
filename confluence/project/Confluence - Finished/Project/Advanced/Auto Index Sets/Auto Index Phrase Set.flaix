@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultAutoIndexSet>
+    <AutoIndex Phrase="passport" IndexTerm="passport">
+    </AutoIndex>
+    <AutoIndex Phrase="renew by mail" IndexTerm="passport:renew">
+    </AutoIndex>
+</CatapultAutoIndexSet>

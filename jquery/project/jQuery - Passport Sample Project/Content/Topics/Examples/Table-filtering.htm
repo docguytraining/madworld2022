@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Table Filtering</h1>
+        <h2>What this script does</h2>
+        <p>This lets you use a search box before a table to filter and show only rows that match the search criteria.  </p>
+        <h2>What problem does it solve?</h2>
+        <p>In big tables it is sometimes hard to locate the exact information you are looking for. This lets you easily search the table. </p>
+        <h2>The script</h2>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton>
+            </MadCap:codeSnippetCopyButton>
+            <MadCap:codeSnippetCaption>tableFilter.js</MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: JavaScript;">
+/*
+ *
+ * JQuery Table Filter 1.0 
+ * Version 1.0.0
+ * @requires jQuery 3.5.1
+ * 
+ * Copyright (c) 2020 Paul Pehrson
+ * 
+ * License: Creative Commons 3.0 BY-SA
+ * 
+ */
+
+function filterTable() {
+    $("#tableFilterInput").on("keyup", function() { // input field needs id="tableFilterInput" for this to work
+      var value = $(this).val().toLowerCase(); // converts text to lower-case so case won't matter for search
+      $("#filteredTable tbody tr").filter(function() { // table to be filtered needs id="filteredTable" for this to work; filters individual rows
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) &gt; -1)
+      });
+    });
+  };</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>We also need to tell the page to invoke this script after the page loads, so add the following to your <code>initializePage.js</code> file. Note how our line is added to the <code>window on.load</code> function. </p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton>
+            </MadCap:codeSnippetCopyButton>
+            <MadCap:codeSnippetCaption>
+                <p>initializePage.js</p>
+            </MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: JavaScript;">$(document).ready(function(){ // as soon as all HTML has been loaded, before images or other jQuery items added 
+    filterTable();	// add table search/filter behavior to tables on the page. 
+});</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>HTML needed for the script to work</h2>
+        <p>The tables on the page must:</p>
+        <ul>
+            <li>
+                <p>Be formatted correctly. This means they must have a <code>&lt;th&gt;</code> element to define the header row. </p>
+            </li>
+            <li>
+                <p>Include the search box. I find it is easiest to put this in a snippet so I can reuse it.</p>
+            </li>
+            <li>
+                <p>Be careful if there are multiple tables on a single page. You might have to re-write the script to only sort the specific table you want. </p>
+            </li>
+        </ul>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton>
+            </MadCap:codeSnippetCopyButton>
+            <MadCap:codeSnippetCaption>HTML before a table</MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: CSS;">        &lt;div MadCap:conditions="Default.ScreenOnly"&gt;
+            &lt;p&gt;You can use the search box to filter the table contents, or click on a table column header to sort.&lt;br /&gt;&lt;![CDATA[
+			]]&gt;&lt;input id="tableFilterInput" type="text" placeholder="Search table ..." /&gt;&lt;/p&gt;
+        &lt;/div&gt;</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>Installation Instructions</h2>
+        <ol>
+            <li>Copy the <code>tableFilter.js</code> file to your <code>scripts</code> folder. (Create in<code> Content\Resoources\scripts</code> if it doesn't exist.)</li>
+            <li>
+                <p>Before any table in your content, add the HTML code (or a snippet with the HTML) right before the table. </p>
+            </li>
+            <li>
+                <p>In the <code>initializePage.js</code> file, add the function call listed above. </p>
+            </li>
+            <li>
+                <p>Edit <code>Content\Resources\Snippets\UI Elements\include-at-top-of-all-pages.flsnp</code> to include a reference to this script.</p>
+                <MadCap:codeSnippet>
+                    <MadCap:codeSnippetCopyButton>
+                    </MadCap:codeSnippetCopyButton>
+                    <MadCap:codeSnippetCaption>
+                        <p>Snippets\UI Elements\include-at-top-of-all-pages.flsnp</p>
+                    </MadCap:codeSnippetCaption>
+                    <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="4" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: HTML;">&lt;body&gt;
+        &lt;div id="scripts"&gt;
+			
+			&lt;script src="../../scripts/tableFilter.js"&gt;&lt;/script&gt;</MadCap:codeSnippetBody>
+                </MadCap:codeSnippet>
+                <p>Remember, the file path is a link to the script relative to this Snippet file. So if the snippet file moves, or the script file moves, you will need to adjust the path here. </p>
+            </li>
+            <li>
+                <p>Build your primary target and test by scrolling down this page.</p>
+            </li>
+        </ol>
+        <h2>Additional Notes</h2>
+        <p>When you look at the recommended HTML notice that the input box and text are wrapped in a condition that excludes these elements from any print targets. </p>
+        <h2>Test it</h2>
+		<MadCap:snippetBlock src="../../Resources/Snippets/TableSort.flsnp" />
+		<table id="filteredTable" style="width: 100%;max-width: 2000px;caption-side: bottom;" class="stripes">
+			<col />
+			<col />
+			<col />
+			<thead>
+				<tr>
+					<th>Company</th>
+					<th>Contact</th>
+					<th>Country</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Alfreds Futterkiste</td>
+					<td>Maria Anders</td>
+					<td>Germany</td>
+				</tr>
+				<tr>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				<tr>
+					<td>Ernst Handel</td>
+					<td>Roland Mendel</td>
+					<td>Austria</td>
+				</tr>
+				<tr>
+					<td>Island Trading</td>
+					<td>Helen Bennett</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Laughing Bacchus Winecellars</td>
+					<td>Yoshi Tannamuri</td>
+					<td>Canada</td>
+				</tr>
+				<tr>
+					<td>Magazzini Alimentari Riuniti</td>
+					<td>Giovanni Rovelli</td>
+					<td>Italy</td>
+				</tr>
+				<tr>
+					<td>Building Contractors Ltd</td>
+					<td>Frank Sorenson</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Custom Contractors</td>
+					<td>Inez Ingredson</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Flag Depot</td>
+					<td>Francis Key</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Cherry Wood Inc</td>
+					<td>George Washington</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Muito Legado Cara</td>
+					<td>Frabriçio Dos Santos </td>
+					<td>Brazil</td>
+				</tr>
+				<tr>
+					<td>Copa do Mundo</td>
+					<td>Ronaldinho</td>
+					<td>Brazil</td>
+				</tr>
+				<tr>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				<tr>
+					<td>Ernst Handel</td>
+					<td>Roland Mendel</td>
+					<td>Austria</td>
+				</tr>
+				<tr>
+					<td>Island Trading</td>
+					<td>Helen Bennett</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Laughing Bacchus Winecellars</td>
+					<td>Yoshi Tannamuri</td>
+					<td>Canada</td>
+				</tr>
+				<tr>
+					<td>Magazzini Alimentari Riuniti</td>
+					<td>Giovanni Rovelli</td>
+					<td>Italy</td>
+				</tr>
+				<tr>
+					<td>Building Contractors Ltd</td>
+					<td>Frank Sorenson</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Custom Contractors</td>
+					<td>Inez Ingredson</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Flag Depot</td>
+					<td>Francis Key</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Cherry Wood Inc</td>
+					<td>George Washington</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Muito Legado Cara</td>
+					<td>Frabriçio Dos Santos </td>
+					<td>Brazil</td>
+				</tr>
+				<tr>
+					<td>Copa do Mundo</td>
+					<td>Ronaldinho</td>
+					<td>Brazil</td>
+				</tr>
+				<tr>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				<tr>
+					<td>Ernst Handel</td>
+					<td>Roland Mendel</td>
+					<td>Austria</td>
+				</tr>
+				<tr>
+					<td>Island Trading</td>
+					<td>Helen Bennett</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Laughing Bacchus Winecellars</td>
+					<td>Yoshi Tannamuri</td>
+					<td>Canada</td>
+				</tr>
+				<tr>
+					<td>Magazzini Alimentari Riuniti</td>
+					<td>Giovanni Rovelli</td>
+					<td>Italy</td>
+				</tr>
+				<tr>
+					<td>Building Contractors Ltd</td>
+					<td>Frank Sorenson</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Custom Contractors</td>
+					<td>Inez Ingredson</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Flag Depot</td>
+					<td>Francis Key</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Cherry Wood Inc</td>
+					<td>George Washington</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Muito Legado Cara</td>
+					<td>Frabriçio Dos Santos </td>
+					<td>Brazil</td>
+				</tr>
+				<tr>
+					<td>Copa do Mundo</td>
+					<td>Ronaldinho</td>
+					<td>Brazil</td>
+				</tr>
+				<tr>
+					<td>Centro comercial Moctezuma</td>
+					<td>Francisco Chang</td>
+					<td>Mexico</td>
+				</tr>
+				<tr>
+					<td>Ernst Handel</td>
+					<td>Roland Mendel</td>
+					<td>Austria</td>
+				</tr>
+				<tr>
+					<td>Island Trading</td>
+					<td>Helen Bennett</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Laughing Bacchus Winecellars</td>
+					<td>Yoshi Tannamuri</td>
+					<td>Canada</td>
+				</tr>
+				<tr>
+					<td>Magazzini Alimentari Riuniti</td>
+					<td>Giovanni Rovelli</td>
+					<td>Italy</td>
+				</tr>
+				<tr>
+					<td>Building Contractors Ltd</td>
+					<td>Frank Sorenson</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Custom Contractors</td>
+					<td>Inez Ingredson</td>
+					<td>UK</td>
+				</tr>
+				<tr>
+					<td>Flag Depot</td>
+					<td>Francis Key</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Cherry Wood Inc</td>
+					<td>George Washington</td>
+					<td>USA</td>
+				</tr>
+				<tr>
+					<td>Muito Legado Cara</td>
+					<td>Frabriçio Dos Santos </td>
+					<td>Brazil</td>
+				</tr>
+				<tr>
+					<td>Copa do Mundo</td>
+					<td>Ronaldinho</td>
+					<td>Brazil</td>
+				</tr>
+			</tbody>
+		</table>
+    </body>
+</html>

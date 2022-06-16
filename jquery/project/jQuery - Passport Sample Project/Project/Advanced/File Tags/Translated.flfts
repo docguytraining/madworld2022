@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultFileTagSet Type="project" Comment="My set of author tags">
+    <FileTag Name="Not Ready" Comment="" />
+    <FileTag Name="Ready" Comment="" />
+    <FileTag Name="Sent" Comment="" />
+</CatapultFileTagSet>

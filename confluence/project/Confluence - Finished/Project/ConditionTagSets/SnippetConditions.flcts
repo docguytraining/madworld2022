@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet Comment="My set of condition tags">
+    <ConditionTag Comment="" Name="PassportFee-AdultRenewal" BackgroundColor="#ff8c00" />
+    <ConditionTag Comment="" Name="PassportFee-AdultNew" BackgroundColor="#20b2aa" />
+    <ConditionTag BackgroundColor="#da70d6" Name="PassportFee-Minor" Comment="" />
+</CatapultConditionTagSet>

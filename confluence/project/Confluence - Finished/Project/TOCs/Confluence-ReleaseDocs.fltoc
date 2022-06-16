@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc Version="1">
+    <TocEntry Title="DocGuy Training">
+        <TocEntry Title="System Requirements" Link="/Content/Topics/Confluence/System_Requirements.htm">
+            <TocEntry Title="Readme" Link="/Content/Topics/Confluence/Readme.htm" />
+        </TocEntry>
+    </TocEntry>
+</CatapultToc>

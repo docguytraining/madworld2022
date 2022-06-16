@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Table Sorting &amp;&#160;Sticky Headers</h1>
+        <h2>What this script does</h2>
+        <p>This script can take properly formed tables, and can keep the top row of the table sticky as you scroll down the page, and it lets you sort your table columns.  </p>
+        <h2>What problem does it solve?</h2>
+        <p>Large tables are sometimes difficult to read. Sometimes you want to sort by other columns than the default sort. </p>
+        <h2>The script</h2>
+        <p>We're using a whole library. It can be found at https://mottie.github.io/tablesorter/docs/.</p>
+        <p>You will need to pick the theme that you want to use. </p>
+        <p>We also need to tell the page to invoke this script after the page loads, so add the following to your <code>initializePage.js</code> file. Note how our line is added to the <code>window on.load</code> function. </p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton>
+            </MadCap:codeSnippetCopyButton>
+            <MadCap:codeSnippetCaption>
+                <p>initializePage.js</p>
+            </MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: JavaScript;">$( window ).on( "load", function() { // on load waits until the page is fully loaded then does the followng: 
+    addThumbnailText(); // Runs function from the thumbnail-text.js file
+});</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>CSS needed for the script to work</h2>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton>
+            </MadCap:codeSnippetCopyButton>
+            <MadCap:codeSnippetCaption>
+                <p>modern.css</p>
+            </MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: CSS;">/* CSS for image thumbnail and pre-pended text */
+
+img
+{
+	max-width: 95%;
+}
+
+img.thumbnail
+{
+	mc-thumbnail: popup;
+}
+
+span.imgTxt
+{
+	font-size: 0.7rem;
+	color: #8589e3;
+	display: block;
+	text-decoration: none;
+}</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>Installation Instructions</h2>
+        <ol>
+            <li>Copy the <code>thumbnail-text.js</code> file to your <code>scripts</code> folder. (Create in<code> Content\Resoources\scripts</code> if it doesn't exist.)</li>
+            <li>
+                <p>At the end of your <code>modern.css</code> file, add the styles from the section above. </p>
+            </li>
+            <li>
+                <p>In the <code>initializePage.js</code> file, add the function call listed above. </p>
+            </li>
+            <li>
+                <p>Edit <code>Content\Resources\Snippets\UI Elements\include-at-top-of-all-pages.flsnp</code> to include a reference to this script.</p>
+                <MadCap:codeSnippet>
+                    <MadCap:codeSnippetCopyButton>
+                    </MadCap:codeSnippetCopyButton>
+                    <MadCap:codeSnippetCaption>
+                        <p>Snippets\UI Elements\include-at-top-of-all-pages.flsnp</p>
+                    </MadCap:codeSnippetCaption>
+                    <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="4" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: HTML;">&lt;body&gt;
+        &lt;div id="scripts"&gt;
+			
+			&lt;script src="../../scripts/thumbnail-text.js"&gt;&lt;/script&gt;</MadCap:codeSnippetBody>
+                </MadCap:codeSnippet>
+                <p>Remember, the file path is a link to the script relative to this Snippet file. So if the snippet file moves, or the script file moves, you will need to adjust the path here. </p>
+            </li>
+            <li>
+                <p>Build your primary target and test by scrolling down this page.</p>
+            </li>
+            <li>
+                <p>When doing this on your own images, remember to add the class <code>.imgthumbnail</code> to the images that you want to modify.</p>
+            </li>
+        </ol>
+        <h2>Additional Notes</h2>
+        <p>What is interesting is that Flare adds the text <code>img</code><i>to the beginning</i> of whatever class you give it in the CSS. That is why in the JavaScript we are looking for the class <code>imgthumbnail</code> instead of the class we added in the style sheet, which is just <code>thumbnail</code>.</p>
+        <h2>Test it</h2>
+    </body>
+</html>
