@@ -1,4 +1,10 @@
 /*<meta />*/
+:root {
+	--primary-color: orange;
+	--secondary-color: blue;
+	--heading-font: "Calibri", "Times New Roman", serif;
+	--body-font: Helvetica, Arial, sans-serif;
+}
 
 html
 {
@@ -23,6 +29,7 @@ h6
 {
 	font-weight: bold;
 	color: #749AB6;
+	font-family:var(--heading-font);
 }
 
 p.example
