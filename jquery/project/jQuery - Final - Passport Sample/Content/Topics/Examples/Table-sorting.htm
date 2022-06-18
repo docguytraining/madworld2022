@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Table Sorting &amp;&#160;Sticky Headers</h1>
+        <h2>What this script does</h2>
+        <p>This script can take properly formed tables, and can keep the top row of the table sticky as you scroll down the page, and it lets you sort your table columns.  </p>
+        <h2>What problem does it solve?</h2>
+        <p>Large tables are sometimes difficult to read. Sometimes you want to sort by other columns than the default sort. </p>
+        <h2>The script</h2>
+        <p>We're using a whole library. It can be found at <a href="https://mottie.github.io/tablesorter">https://mottie.github.io/tablesorter</a>. Copy the <code>/tablesorter/</code> folder into your <code>Resources/scripts</code> folder. </p>
+        <p>You will need to pick the theme that you want to use. </p>
+        <p>We also need to tell the page to invoke this script after the page loads, so add the following to your <code>initializePage.js</code> file. Note how our line is added to end of the file. </p>
+        <p>This script has a huge number of options; We'll just focus on two: the ability to sort columns, and the sticky table headers feature. </p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton>
+            </MadCap:codeSnippetCopyButton>
+            <MadCap:codeSnippetCaption>
+                <p>initializePage.js</p>
+            </MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: JavaScript;">// table sort feature and sticky table header feature
+$(function() {
+    $('table').tablesorter({
+      theme : 'blue', // read the docs, and set the theme you want to use here
+      widgets : ['stickyHeaders', 'zebra' ],
+        widgetOptions : {
+        stickyHeaders: 'tablesorter-stickyHeader',
+        stickyHeaders_offset : 25 // this is the number, in px, of our header height when it is small
+      }
+    });
+});</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>Our site includes a menu bar that re-sizes when you scroll down. Our header height is <code>25px</code> (when small), so we add that value on line 8 so the table header is shown below the menu. </p>
+        <h2>Template page changes needed</h2>
+        <p>For the CSS to load properly, we need to add a reference to the <code>head</code> element of all template pages that will have tables. In our case, we picked the blue stylesheet (note line 4 above; that theme reference needs to match the file in line 3 below). </p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton>
+            </MadCap:codeSnippetCopyButton>
+            <MadCap:codeSnippetCaption>Add to all template pages that will have tables</MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: HTML;">&lt;!-- Add to the bottom of the HEAD section --&gt;
+
+&lt;link rel="stylesheet" href="../scripts/tablesorter/dist/css/theme.blue.min.css" /&gt;
+&lt;/head&gt;</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>Installation Instructions</h2>
+        <ol>
+            <li>Copy the <code>tablesorter</code> folder to your <code>scripts</code> folder. (Create in<code> Content\Resoources\scripts</code> if it doesn't exist.)</li>
+            <li>
+                <p>In the <code>initializePage.js</code> file, add the function call listed above.</p>
+            </li>
+            <li>
+                <p>In all your template pages that will contain tables, add the reference above to the end of the <code>head</code> section. </p>
+            </li>
+            <li>
+                <p>Build your primary target and test by scrolling down this page.</p>
+            </li>
+            <li>
+                <p>When doing this on your own images, remember to add the class <code>.imgthumbnail</code> to the images that you want to modify.</p>
+            </li>
+        </ol>
+        <h2>Additional Notes</h2>
+        <p>What is interesting is that Flare adds the text <code>img</code><i>to the beginning</i> of whatever class you give it in the CSS. That is why in the JavaScript we are looking for the class <code>imgthumbnail</code> instead of the class we added in the style sheet, which is just <code>thumbnail</code>.</p>
+        <h2>Test it</h2>
+        <p>This table does not have any style from Flare, but the style is coming from the tablesorter style sheet. We picked Blue. </p>
+        <table id="sortMe" class="tablesorter">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                </tr>
+                <tr>
+                    <td>Ernst Handel</td>
+                    <td>Roland Mendel</td>
+                    <td>Austria</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>Helen Bennett</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Laughing Bacchus Winecellars</td>
+                    <td>Yoshi Tannamuri</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Giovanni Rovelli</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Building Contractors Ltd</td>
+                    <td>Frank Sorenson</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Custom Contractors</td>
+                    <td>Inez Ingredson</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Flag Depot</td>
+                    <td>Francis Key</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Cherry Wood Inc</td>
+                    <td>George Washington</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Muito Legado Cara</td>
+                    <td>Frabriçio Dos Santos </td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Copa do Mundo</td>
+                    <td>Ronaldinho</td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                </tr>
+                <tr>
+                    <td>Ernst Handel</td>
+                    <td>Roland Mendel</td>
+                    <td>Austria</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>Helen Bennett</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Laughing Bacchus Winecellars</td>
+                    <td>Yoshi Tannamuri</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Giovanni Rovelli</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Building Contractors Ltd</td>
+                    <td>Frank Sorenson</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Custom Contractors</td>
+                    <td>Inez Ingredson</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Flag Depot</td>
+                    <td>Francis Key</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Cherry Wood Inc</td>
+                    <td>George Washington</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Muito Legado Cara</td>
+                    <td>Frabriçio Dos Santos </td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Copa do Mundo</td>
+                    <td>Ronaldinho</td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                </tr>
+                <tr>
+                    <td>Ernst Handel</td>
+                    <td>Roland Mendel</td>
+                    <td>Austria</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>Helen Bennett</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Laughing Bacchus Winecellars</td>
+                    <td>Yoshi Tannamuri</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Giovanni Rovelli</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Building Contractors Ltd</td>
+                    <td>Frank Sorenson</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Custom Contractors</td>
+                    <td>Inez Ingredson</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Flag Depot</td>
+                    <td>Francis Key</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Cherry Wood Inc</td>
+                    <td>George Washington</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Muito Legado Cara</td>
+                    <td>Frabriçio Dos Santos </td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Copa do Mundo</td>
+                    <td>Ronaldinho</td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                </tr>
+                <tr>
+                    <td>Ernst Handel</td>
+                    <td>Roland Mendel</td>
+                    <td>Austria</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>Helen Bennett</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Laughing Bacchus Winecellars</td>
+                    <td>Yoshi Tannamuri</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Giovanni Rovelli</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Building Contractors Ltd</td>
+                    <td>Frank Sorenson</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Custom Contractors</td>
+                    <td>Inez Ingredson</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Flag Depot</td>
+                    <td>Francis Key</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Cherry Wood Inc</td>
+                    <td>George Washington</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Muito Legado Cara</td>
+                    <td>Frabriçio Dos Santos </td>
+                    <td>Brazil</td>
+                </tr>
+                <tr>
+                    <td>Copa do Mundo</td>
+                    <td>Ronaldinho</td>
+                    <td>Brazil</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

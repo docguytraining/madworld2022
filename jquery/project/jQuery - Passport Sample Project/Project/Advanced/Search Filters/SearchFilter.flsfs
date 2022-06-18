@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<CatapultSearchFilterSet>
-    <SearchFilter Name="passport" Order="1" Concepts="passport;documents">
-    </SearchFilter>
-    <SearchFilter Name="international travel" Comment="" Order="0" Concepts="visa;international travel;passport" />
-</CatapultSearchFilterSet>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-    <body>
-        <div MadCap:conditions="Default.ScreenOnly">
-            <p>You can use the search box to filter the table contents, or click on a table column header to sort.<br /><![CDATA[
-			]]><input id="tableFilterInput" type="text" placeholder="Search table ..." /></p>
-        </div>
-    </body>
-</html>

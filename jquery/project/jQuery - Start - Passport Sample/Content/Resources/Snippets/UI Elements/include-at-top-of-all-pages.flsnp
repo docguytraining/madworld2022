@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="scripts">
+            <!-- content in this div comes from include-at-top-of-all-pages.flsnp -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Commenting out but leaving here so you can copy them faster
+            <script src="../../scripts/initializePage.js">s</script>
+            <script src="../../scripts/scroll-top-nav.js"></script>
+            <script src="../../scripts/thumbnail-text.js"></script>
+            <script src="../../scripts/show-hide-div.js"></script>
+            <script src="../../scripts/doc-feedback.js"></script>
+            <script src="../../scripts/tableFilter.js"></script>			
+			<script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.js"></script>
+			<script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>		
+
+			<script src="../scripts/jquery-ui/jquery-ui.min.js"></script>
+			<link href="../scripts/jqueryu-ui/jquery-ui.min.js" rel="stylesheet" type="text/css" /> 
+			-->
+        </div>
+    </body>
+</html>

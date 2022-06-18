@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Email Contact Script</h1>
+        <h2>What this script does</h2>
+        <p>When a user clicks a link with the correct class, this script creates a mailto:// link with additional information about the topic. </p>
+        <h2>What problem does it solve?</h2>
+        <p>Not all servers have access to the outside internet, so we needed a documentation feedback link that opened an email.</p>
+        <h2>The script</h2>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetCaption>doc-feedback.js</MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: JavaScript;">///
+/// DOC FEEDBACK LINK
+///
+
+function watchEventHandlers() {
+
+    $('#docfeedback').on('click', function() { // watches any element with id="docfeedback" for a click.
+        console.log('DocFeedback trigger clicked'); // logging for troubleshooting
+        feedbacklink(); // Will run the feedbacklink function below
+    });
+
+}
+
+function feedbacklink() { // This function only runs when called in another script. 
+
+	var version = $("span#version").text(); //uses jquery to get the value of the 
+	                                        //span#version element, which on our template page is
+	                                        //a variable that displays the version of the product
+	var email = "somebody@example.com";  //email address where feedback will be sent
+	var heading = $("h1").text();        //uses jquery to pull the first H1 on the page to use in 
+	                                        //the email subject
+	var filelink = (location.origin).concat(location.pathname); // Original URL
+	var pathname2 = (location.pathname); // Just the path without the host
+	var hrefattribute = "mailto:" + email + "?subject=Doc Feedback for topic: " + heading + "&amp;body=Title: " + heading + "%0D%0ADocumentation Version: " + version + "%0D%0AFile path: " + pathname2 + "%0D%0AOriginal URL: " + filelink + "%0D%0ADocumentation Feedback:%0D%0A%0D%0A"; // formats the mailto link
+
+	location.href = hrefattribute; // actually re-directs you to the users email program 
+}</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>To invoke this script, we add an event handler that watches for somebody to click our link. When they click our link, the event handler runs the function. </p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetCaption>
+                <p>initializePage.js</p>
+            </MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: JavaScript;">$(document).ready(function(){ // as soon as all HTML has been loaded, before images or other jQuery items added 
+    watchEventHandlers(); // We have an event handler in doc-feedback.js to watch for  clicks on the doc feedback link				
+
+});</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>CSS needed for the script to work</h2>
+        <p>None</p>
+        <h2>Template page changes needed for the script to work</h2>
+        <p>In our script, we are looking for the version of the product, and we need a link to click on, so on our template pages we add the following:</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetCaption>
+                <p>All template pages</p>
+            </MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: HTML;">&lt;p id="docfeedback" class="scriptedlink"&gt;
+    &lt;a name="feedback" class="scriptedLink" href="#feedback"&gt;
+    	How can we improve this content?
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+	© 2022 by Example Company &lt;br /&gt;
+	Our Product Name Here version &lt;span id="version" class="version"&gt;2022 R1&lt;/span&gt;
+&lt;/p&gt;</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>Installation Instructions</h2>
+        <ol>
+            <li>Copy the <code>doc-feedback.js</code> file to your <code>scripts</code> folder. (Create in<code> Content\Resoources\scripts</code> if it doesn't exist.)</li>
+            <li>
+                <p>In the <code>initializePage.js</code> file, add the function call listed above. </p>
+            </li>
+            <li>
+                <p>Edit <code>Content\Resources\Snippets\UI Elements\include-at-top-of-all-pages.flsnp</code> to include a reference to this script.</p>
+                <MadCap:codeSnippet>
+                    <MadCap:codeSnippetCopyButton />
+                    <MadCap:codeSnippetCaption>
+                        <p>Snippets\UI Elements\include-at-top-of-all-pages.flsnp</p>
+                    </MadCap:codeSnippetCaption>
+                    <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="4" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: HTML;">&lt;body&gt;
+        &lt;div id="scripts"&gt;
+			
+			&lt;script src="../../scripts/doc-feedback.js"&gt;&lt;/script&gt;</MadCap:codeSnippetBody>
+                </MadCap:codeSnippet>
+                <p>Remember, the file path is a link to the script relative to this Snippet file. So if the snippet file moves, or the script file moves, you will need to adjust the path here. </p>
+            </li>
+            <li>
+                <p>On your template pages, include the text listed in the section above. </p>
+            </li>
+            <li>
+                <p>Build your primary target and test by clicking the "How can we improve this content" link at the bottom of the page. </p>
+            </li>
+        </ol>
+        <h2>Additional Notes</h2>
+        <p>None.</p>
+        <h2>Test it</h2>
+        <p>Click "How can we improve this content". We expect that your default email program will load with a new message with information about the topic you were on when you clicked the link.</p>
+    </body>
+</html>

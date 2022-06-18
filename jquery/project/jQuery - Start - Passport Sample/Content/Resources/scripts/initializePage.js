@@ -1,0 +1,29 @@
+﻿//
+// Copyright 2022  by Paul Pehrson.
+// All Rights Reserved.
+// Released under the MIT License
+//
+// Author: Paul Pehrson (paul.pehrson@gmail.com)
+
+
+//  The READY event occurs after the HTML document has been loaded, while the ONLOAD event occurs later, 
+// when all content (e.g. images) also has been loaded.
+
+// The ONLOAD event is a standard event in the DOM, while the ready event is specific to jQuery. 
+
+//The purpose of the ready event is that it should occur as early as possible after the document has loaded, 
+//so that code that adds functionality to the elements in the page doesn't have to wait for all content to load.
+//
+
+$(document).ready(function(){ // as soon as all HTML has been loaded, before images or other jQuery items added 
+ 
+});
+
+$( window ).on( "load", function() { // on load waits until the page is fully loaded then does the followng: 
+
+    console.log("window on load function called in initializePage.js");
+});
+
+$("li#logo-wrapper").on("loaded", function () { // Fires after the top-nav menu has finished loading
+    
+ });

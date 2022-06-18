@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" />
+        <meta name="author" /><title></title>
+        <link href="../scripts/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <script src="../scripts/jquery-ui/jquery-ui.min.js">
+        </script>
+        <link rel="stylesheet" href="../Stylesheets/Modern.css" type="text/css" />
+        <!-- <link rel="stylesheet" href="../scripts/tablesorter/dist/css/theme.blue.min.css" /> -->
+    </head>
+    <body>
+        <MadCap:snippetBlock src="../Snippets/UI Elements/include-at-top-of-all-pages.flsnp" />
+        <div class="content">
+            <div id="MadCapMain" class="MadCapMain"> </div>
+            <nav id="breadcrumbs" role="navigation" aria-label="Secondary">
+                <MadCap:breadcrumbsProxy />
+            </nav>
+            <article id="article">
+                <main id="main" class="accessibleTarget">
+                    <!-- Begin portion included by MadCap bodyProxy -->
+                    <MadCap:bodyProxy />
+                    <!-- End portion included by MadCap bodyProxy -->
+                </main>
+            </article>
+            <footer id="footercontainer">
+                <div id="footercontent">
+                    <div id="footertext">
+                        <p id="docfeedback" class="scriptedlink"><a name="feedback" class="scriptedLink" href="#feedback">How can we improve this content?</a>
+                        </p>
+                        <p>
+                            © <MadCap:variable name="Variables.Copyright" /> 
+                            by <MadCap:variable name="Variables.CompanyName" /><br /><MadCap:variable name="Variables.productName" /> version 
+                            <span id="version" class="version"><MadCap:variable name="Variables.productVersion" /></span></p>
+                    </div>
+                    <div id="buildInfo" class="hideme buildInfo">
+                        <p id="builddate">
+                            Project build date: <MadCap:variable name="Variables.ProjectBuildDate_Long" /></p>
+                        <p id="topicupdated">
+                            Topic updated date: <MadCap:variable name="Variables.TopicSavedDate" /></p>
+                        <p id="topiccreated">
+                            Topic created date: <MadCap:variable name="Variables.TopicCreateDate" /></p>
+                        <p id="masterpage">
+                            This page built from standard-template.flmsp
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,392 @@
+/*<meta />*/
+
+:root{
+	--madworld-indigo: #3d3e62;
+	--madworld-orange: #ff6333;
+	--madworld-white:#fff;
+	--madworld-cloud-blue:#f2f3f8;
+	--madworld-blue-gray:#cfd3e6;
+	--madworld-periwinkle:#8589e3;
+	--madworld-gold:#fbb615;
+	--madworld-red:#ff3333;
+	--madworld-neutral-black:#1f1f23;
+	--madworld-orange-accessible: #f25e30;
+	--madworld-periwinkle-accessible: #6b6eb7;
+	--lightgray: #eee;
+	--gray2:#546C7F;
+	--font-heading: Helvetica, Arial, sans-serif;
+	--font-body:Helvetica, Arial, sans-serif;
+}
+
+html {
+	font-size:16px;
+}
+
+body
+{
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 1.7rem;
+	margin: 1.2rem;
+	max-width: 750px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	font-weight: bold;
+	color: var(--madcap-periwinkle-accessible);
+}
+
+
+
+p.example
+{
+	color: var(--gray2);
+	border: solid 1px #BECFDC;
+	background-color: var(--lightgray);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	padding: 14px 20px;
+}
+
+div.main-section{
+	margin-top:135px;
+}
+p.note
+{
+	color: #616E14;
+	border: solid 1px #BFD62F;
+	background-color: #DAE691;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	padding: 14px 20px;
+}
+
+a
+{
+	color: #5B8EC1;
+}
+
+MadCap|expanding
+{
+	mc-open-image: url('resources:Images/WebHelp/minus.png');
+	mc-closed-image: url('resources:Images/WebHelp/plus.png');
+	mc-image-position: left;
+}
+
+MadCap|dropDown
+{
+	mc-open-image: url('resources:Images/WebHelp/minus.png');
+	mc-closed-image: url('resources:Images/WebHelp/plus.png');
+}
+
+MadCap|toggler
+{
+	mc-open-image: url('resources:Images/WebHelp/minus.png');
+	mc-closed-image: url('resources:Images/WebHelp/plus.png');
+	color: inherit;
+}
+
+MadCap|popupHead
+{
+	color: #5B8EC1;
+}
+
+MadCap|popupBody
+{
+	color: #EBEBEB;
+	border: none;
+	background-color: rgba(0, 0, 0, .85);
+	padding: 11px 15px;
+}
+
+MadCap|glossaryTerm.Expanding
+{
+	color: inherit;
+	font-weight: inherit;
+}
+
+MadCap|glossaryTerm.Hyperlink
+{
+	color: #5B8EC1;
+	font-weight: inherit;
+}
+
+MadCap|glossaryTerm.Popup
+{
+	color: #5B8EC1;
+	font-weight: normal;
+}
+
+MadCap|conceptLink
+{
+	color: #000000;
+}
+
+MadCap|keywordLink
+{
+	color: #000000;
+}
+
+MadCap|relatedTopics
+{
+	color: #000000;
+}
+
+MadCap|helpControlMenu
+{
+	color: #707070;
+	background-color: #FFFFFF;
+	border: none;
+}
+
+MadCap|helpControlMenuItem
+{
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+MadCap|helpControlMenuItem.Highlighted
+{
+	color: #000000;
+	background-color: #E5EFF7;
+}
+
+div#footer
+{
+	margin-top: 3rem;
+	font-size: .75rem;
+	color: #aaa;
+}
+
+MadCap|relationshipsHeading
+{
+	mc-label: 'Other Concepts';
+}
+
+MadCap|relationshipsHeading.concept
+{
+	mc-label: 'Related Concepts';
+}
+
+table.stripes
+{
+	margin-left: 2em;
+	border: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table.stripes tr:nth-child(odd)
+{
+	background-color: white;
+}
+
+table.stripes tr:nth-child(even)
+{
+	background-color: #DEE8F0;
+}
+
+table.stripes td
+{
+	padding: .5em;
+	border: 0;
+}
+
+table.stripes th
+{
+	border-bottom: 2px solid black;
+}
+
+table.stripes th
+{
+	text-align: left;
+}
+
+.hideme
+{
+	display: none;
+}
+
+html.home	/*Sets the template page for home to override default*/
+{
+	mc-template-page: url('../TemplatePages/HomePage.flmsp');
+}
+
+/*  CSS for scroll-top-nav.js   */
+
+.title-bar
+{
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	padding: 3rem;
+}
+
+nav.title-bar
+{
+	padding: 10px 0 15px 0;
+	height: 130px;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+}
+
+nav.title-bar div.nav-search-wrapper
+{
+	margin-top: 0;
+	transition: all 0.25s ease-in-out;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+}
+
+nav.title-bar div.title-bar-layout a.logo
+{
+	background-size: 100%;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+}
+
+nav.title-bar.small
+{
+	/* This is the height of the nav with this class */
+	height: 25px;
+}
+
+nav.title-bar.small div.navigation-wrapper
+{
+	/* Hide the menu */
+	display: none;
+}
+
+nav.title-bar.small div.title-bar-layout a.logo
+{
+	/* Make the logo small */
+	background-size: 50%;
+	margin-top: -33px;
+}
+
+nav.title-bar.small div.nav-search-wrapper
+{
+	/* Hide the search */
+	margin-top: -150px;
+}
+
+/* CSS for image thumbnail and pre-pended text */
+
+img
+{
+	max-width: 95%;
+}
+
+img.thumbnail
+{
+	mc-thumbnail: popup;
+}
+
+span.imgTxt
+{
+	font-size: 0.7rem;
+	color: #8589e3;
+	display: block;
+	text-decoration: none;
+}
+
+code {
+	border: 1px solid #5a5a5a;
+	border-radius:3px;
+	padding:1px;
+}
+
+pre code, div.codeSnippet, div.codeSnippetCopyButton, div.codeSnippetCaption {
+	border:none;
+	font-size:.85rem;
+}
+
+pre {
+	font-size:.85rem;
+	line-height:1.3rem;
+}
+
+
+/* the following styles make the topic boxes work for show-hide-div.js and makes stuff look good */
+
+:root{
+	--madcap-indigo: #3d3e62;
+	--madcap-orange: #ff6333;
+	--madcap-white:#fff;
+	--madcap-cloud-blue:#f2f3f8;
+	--madcap-blue-gray:#cfd3e6;
+	--madcap-periwinkle:#8589e3;
+	--madcap-gold:#fbb615;
+	--madcap-red:#ff3333;
+	--madcap-neutral-black:#1f1f23;
+	--madcap-orange-accessible: #f25e30;
+	--madcap-periwinkle-accessible: #6b6eb7;
+	--lightgray: #eee;
+}
+
+div#pagetopics {
+	margin-top:30px;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: center;
+	clear:both;
+}
+
+div.topicbox {
+	background-color: var(--madcap-cloud-blue);
+    width: 300px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid var(--madcap-cloud-blue);
+    border-radius: 5px;
+}
+
+h2.boxtitle
+{
+	padding: 10px;
+	font-size: 1.5rem;
+	margin-top: 0;
+	font-weight:bold;	
+}
+
+h2 i {
+	padding-right:0.3em;
+	font-size:1.5rem;
+}
+
+div.topicbox a.xref,
+div.topicbox a:link,
+div.topicbox a:visited {
+	color:var(--madcap-neutral-black);
+	text-decoration:none;
+}
+
+div.topicbox a.xref:hover,
+div.topicbox a:hover,
+div.topicbox a:hover:visited,
+div.topicbox .MCxref.xref:hover:focus:visited {
+	color:var(--madcap-periwinkle-accessible);
+	text-decoration:underline;
+}
+
+div.topicbox:hover {
+	background-color:var(--madcap-white);
+	outline: 1px solid var(--madcap-gold);
+}
+div.topicbox:focus-within {
+	background-color:var(--madcap-white);
+	outline: 1px solid var(--madcap-gold);
+}
+

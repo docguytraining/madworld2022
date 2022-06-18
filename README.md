@@ -8,6 +8,10 @@ This repository includes all the project files, slides, and scripting files you 
 
 Please review the License file. This work remains copyrighted, but available through an MIT license, so please follow the appropriate procedures.
 
+### Post-conference update
+
+Those of you who attended my advanced worshop were promised that I would update my projects with working examples of the jquery scripts so you can see them working in a project. That is now complete.
+
 ## Contents
 
 Folders:
@@ -19,13 +23,13 @@ Folders:
 
 ## So what do you expect me to do with this stuff?
 
-If you are familiar with GitHub, feel free to clone the repo into a GIT repo on your own machine. There are lots of tuturoials out there on how to do that. 
+If you are familiar with GitHub, feel free to clone the repo into a GIT repo on your own machine. There are lots of tuturoials out there on how to do that.
 
-However, if you don't want to go to the hastle of cloining the repo, the easiest thing to do is to download a zipped folder with all these files. 
+However, if you don't want to go to the hastle of cloining the repo, the easiest thing to do is to download a zipped folder with all these files.
 
-1. Click the green **Code** button at the top of this page. 
+1. Click the green **Code** button at the top of this page.
 1. Click **Download ZIP**.
-1. Open the download folder and right-click on the zip package. 
-1. Click Extract. 
+1. Open the download folder and right-click on the zip package.
+1. Click Extract.
 
-That will give you the latest version of all my project files. 
+That will give you the latest version of all my project files.
