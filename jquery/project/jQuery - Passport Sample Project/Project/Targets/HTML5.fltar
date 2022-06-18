@@ -9,7 +9,8 @@
   MasterPage="/Content/Resources/TemplatePages/standard-template.flmsp"
   SearchFilterSet="/Project/Advanced/Search Filters/SearchFilter.flsfs"
   Medium="print"
-  Skin="/Project/Skins/HTML5 - Top Navigation.flskn">
+  Skin="/Project/Skins/HTML5 - Top Navigation.flskn"
+  MasterStylesheetOverride="true">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"

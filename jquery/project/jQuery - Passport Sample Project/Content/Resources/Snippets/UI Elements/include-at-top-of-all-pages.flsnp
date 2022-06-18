@@ -2,41 +2,21 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" />
+		
+		
     </head>
     <body>
         <div id="scripts">
-		<!-- content in this div comes from include-at-top-of-all-pages.flsnp -->
-			<script src="../../scripts/initializePage.js"> <!--Put this one first -->
-			</script>
-            <script src="../../scripts/scroll-top-nav.js">
-            </script>
-            <script src="../../scripts/thumbnail-text.js">
-            </script>
-            <script src="../../scripts/show-hide-div.js">
-            </script>
-            <script src="../../scripts/doc-feedback.js">
-            </script>
-			<script src="../../scripts/tableFilter.js">
-            </script>
+            <!-- content in this div comes from include-at-top-of-all-pages.flsnp -->
+            <script src="../../scripts/initializePage.js"> <!--Put this one first --></script>
+            <script src="../../scripts/scroll-top-nav.js"></script>
+            <script src="../../scripts/thumbnail-text.js"></script>
+            <script src="../../scripts/show-hide-div.js"></script>
+            <script src="../../scripts/doc-feedback.js"></script>
+            <script src="../../scripts/tableFilter.js"></script>			
+			<script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.js"></script>
+			<script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>		
 
-			<!-- choose a theme file for table sorting script -->
-			<link rel="stylesheet" href="../../scripts/tablesorter/dist/css/theme.blue.css" />
-			<!-- load tablesorter script -->
-			<script type="text/javascript" src="../../scripts/tablesorter/dist/js/jquery.tablesorter.js"></script>
-			<!-- tablesorter widgets (optional) -->
-			<script type="text/javascript" src="../../scripts/tablesorter/dist/js/widgets/widget-stickyHeaders.min.js"></script>
-
-
-
-            <!--
-            <script src="../scripts/jquery.tablesorter.js">
-            </script>
-            <script src="../Content/Resources/scripts/jquery.stickytableheaders.js">
-            </script>
-			
-			
-			-->
-            
             <!--
 			<script src="../scripts/jquery-ui/jquery-ui.min.js"></script>
 			<link href="../scripts/jqueryu-ui/jquery-ui.min.js" rel="stylesheet" type="text/css" /> 

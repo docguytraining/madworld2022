@@ -20,4 +20,22 @@
     Type="DateTime"
     LastUpdated="2022-06-15T11:19:02.1288439-06:00"
     EvaluatedDefinition="y">y</Variable>
+  <Variable
+    Name="ProjectBuildDate_Long"
+    Comment=""
+    Type="DateTime"
+    LastUpdated="2022-06-17T22:11:35.0695398-06:00"
+    EvaluatedDefinition="MMMM dd yyyy hh:mm:ss tt">MMMM dd yyyy hh:mm:ss tt</Variable>
+  <Variable
+    Name="TopicSavedDate"
+    Comment=""
+    Type="DateTimeFileSaved"
+    LastUpdated="2022-06-17T22:13:50.5890065-06:00"
+    EvaluatedDefinition="MMMM dd yyyy">MMMM dd yyyy</Variable>
+  <Variable
+    Name="TopicCreateDate"
+    Comment=""
+    Type="DateTimeFileCreated"
+    LastUpdated="2022-06-17T22:14:48.3476811-06:00"
+    EvaluatedDefinition="MMMM dd yyyy">MMMM dd yyyy</Variable>
 </CatapultVariableSet>

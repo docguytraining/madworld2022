@@ -18,7 +18,6 @@
 $(document).ready(function(){ // as soon as all HTML has been loaded, before images or other jQuery items added 
     watchEventHandlers(); // We have an event handler in doc-feedback.js to watch for  clicks on the doc feedback link
     filterTable();	// add table search/filter behavior to tables on the page. 
-    tablesorter()
 });
 
 $( window ).on( "load", function() { // on load waits until the page is fully loaded then does the followng: 
@@ -31,9 +30,14 @@ $("li#logo-wrapper").on("loaded", function () { // Fires after the top-nav menu 
  });
 
 
- function tablesorter(){
-    $(function() {
-        $("table").tablesorter();
-      });
- }
 
+$(function() {
+    $('table').tablesorter({
+      theme : 'blue', // read the docs, and set the theme you want to use here
+      widgets : ['stickyHeaders', 'zebra' ],
+        widgetOptions : {
+        stickyHeaders: 'tablesorter-stickyHeader',
+        stickyHeaders_offset : 25 // this is the number, in px, of our header height when it is small
+      }
+    });
+});

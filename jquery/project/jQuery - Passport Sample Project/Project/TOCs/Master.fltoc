@@ -34,40 +34,29 @@
       Link="/Content/Topics/Reference/Travel-to-high-risk-areas.htm" />
   </TocEntry>
   <TocEntry
-    Title="[%=System.LinkedTitle%]"
-    Link="/Content/Topics/home.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-  <TocEntry
     Title="Examples">
     <TocEntry
-      Title="Using Buttons to Show or Hide Divs"
+      Title="[%=System.LinkedTitle%]"
       Link="/Content/Topics/Examples/button-show-hide.htm"
       MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
-      Title="Insert Text before Thumbnail images"
+      Title="[%=System.LinkedTitle%]"
       Link="/Content/Topics/Examples/Dynamic-thumbnail-instructions.htm"
       MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
-      Title="Email Contact Script"
+      Title="[%=System.LinkedTitle%]"
       Link="/Content/Topics/Examples/email-contact-script.htm"
       MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
-      Title="Table Filtering"
+      Title="[%=System.LinkedTitle%]"
       Link="/Content/Topics/Examples/Table-filtering.htm"
       MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
-      Title="Table Sorting"
+      Title="[%=System.LinkedTitle%]"
       Link="/Content/Topics/Examples/Table-sorting.htm"
       MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
     <TocEntry
-      Title="Table Sorting"
-      Link="/Content/Topics/Examples/TableSortingAndFiltering.htm"
-      MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-    <TocEntry
-      Title="Sticky Table Headers"
-      Link="/Content/Topics/Examples/Table-stickty-headers.htm"
-      MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-    <TocEntry
-      Title="Shrink Top-Nav Menu on Scroll"
+      Title="[%=System.LinkedTitle%]"
       Link="/Content/Topics/Examples/top-nav-shrink-on-scroll.htm"
       MadCap:generatedToc="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
   </TocEntry>
