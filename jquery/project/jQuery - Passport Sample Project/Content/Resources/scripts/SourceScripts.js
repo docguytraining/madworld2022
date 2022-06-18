@@ -1,32 +1,9 @@
-//
+﻿//
 // Copyright 2022  by Paul Pehrson.
 // All Rights Reserved.
 // Released under the MIT License
 //
 // Author: Paul Pehrson (paulpehrson@gmail.com)
-
-
-
-///
-/// DOC FEEDBACK EVENT HANDLER
-///
-
-
-function watchEventHandlers() { // This needs to run when the page loads so it continually watches for you to click on the link or button.
-
-    $('p#docfeedback').on('click', function() { // used if you have a feedback link as text in a paragraph with the ID docfeedback
-        console.log('DocFeedback link clicked');
-        feedbacklink();
-    });
-    $('button#docfeedback').on('click', function() { // used if you have a feedback button with an ID docfeedback
-        console.log('DocFeedback button clicked');
-        feedbacklink();
-    })
-
-}
-
-
-
 
 
 
@@ -58,7 +35,6 @@ function wrapTableHeader() { // if there is a table inserted from Confluence, we
       console.log("No confluence table on page"); // script didn't find a table with class confluenceTable on the page, so no further action was taken. 
     }
   }
-
 
 
 

@@ -2,8 +2,6 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" />
-		
-		
     </head>
     <body>
         <div id="scripts">
@@ -17,11 +15,9 @@
 			<script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.js"></script>
 			<script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.widgets.js"></script>		
 
-            <!--
 			<script src="../scripts/jquery-ui/jquery-ui.min.js"></script>
 			<link href="../scripts/jqueryu-ui/jquery-ui.min.js" rel="stylesheet" type="text/css" /> 
 
-			-->
         </div>
     </body>
 </html>

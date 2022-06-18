@@ -104,50 +104,6 @@ p.Copyright
 	max-width: 100%;
 }
 
-span.icon-new {
-/* Just to get the images included in the build so I can play with them */
-	background-image: url(../Images/Icons/icon-xref-10.png);
-	background-image: url(../Images/Icons/icon-xref-16.png);
-	background-image: url(../Images/Icons/icon-link-10.png);
-	background-image: url(../Images/Icons/icon-link-16.png);
-/* this next one is the correct one */
-background-image: url(../Images/Icons/new-oval.svg);
-/* background-size:2.5rem;
-background-position:left top;
-background-repeat:no-repeat;
-padding-left: 60px;
-margin-left:-60px; 
-background-size:2rem;*/
-background-position:left;
-background-repeat:no-repeat;
-display:block;
-position: absolute;
-height:.8rem;
-width:100%;
-margin-top:-.55rem;
-float:left;
-margin-left:-20px;
-}
-
-span.icon-updated {
-	background-image: url(../Images/Icons/Update.png);
-	/* background-size:3rem;
-	background-position:left top;
-	background-repeat:no-repeat;
-	padding-left: 75px;
-	margin-left:-75px;
-	background-size:3rem;*/
-	background-position:left;
-	background-repeat:no-repeat;
-	display:block;
-	position:absolute;
-	height: 0.7rem;
-	width:100%;
-	margin-top: -.45rem;
-	float:left;
-	margin-left:-20px;
-}
-
 /* Mad Cap proxy/editor assigned styles */
 
 MadCap|searchBarProxy
@@ -182,7 +138,7 @@ MadCap|menuProxy.menu2
 html.HomePage
 /* This page uses a different MadCap master page than the rest of the topics, so we tell it which master page to use here. */
 {
-	mc-master-page: url('../MasterPages/topNav2021/HomePage.flmsp');
+	mc-master-page: url('../TemplatePages/HomePage.flmsp');
 }
 
 
@@ -191,95 +147,16 @@ nav.sidenav-wrapper{
 	display:none;
 }
 
-  div#pagecontent {
+div#pagecontent {
 	/* For the home page we need to center our main page horizontally. This does that */
 	margin-left: auto;
 	margin-right: auto;
-  }
+}
 
-  .off-canvas-wrapper-inner .outer-row {
+.off-canvas-wrapper-inner .outer-row {
 	  /* The home page content needs a different max width than its cotainer. This does that. */
 	max-width: 110em;
-  }
-
-  div.feedback-comments-wrapper {
-	display:none; /* Hide Pulse on homepage */
 }
-
-/* Medium Layout */
-
-@media only screen and (max-width: 64em)
-{
-	#content-section .right-section,
-	#content-section .left-section
-	{
-		padding: 0;
-	}
-
-	div.slidingshow
-	{
-		width: 100%;
-	}
-
-	.left-section div.button-group > div
-	{
-		margin-bottom: 20px;
-	}
-
-	.footer
-	{
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
-}
-
-/* Small Layout */
-
-@media screen and (max-width: 40em)
-{
-	MadCap|searchBarProxy.homeSearchBar
-	{
-		width: 100%;
-	}
-
-	div.topichero h1
-	{
-		font-size: 2em;
-	}
-
-	div.topichero h3
-	{
-		font-size: 1.2em;
-	}
-
-	#content-section
-	{
-		padding-top: 30px;
-		padding-bottom: 30px;
-	}
-
-
-	.footer-links,
-	p.Copyright,
-	.footer-icons
-	{
-		text-align: center;
-	}
-}
-
-@media print
-{
-	h1
-	{
-		font-size: 1.75em;
-	}
-
-	p.Copyright
-	{
-		font-size: 6px;
-	}
-}
-
 
 div#pagecontent {
 	max-width:100em;
