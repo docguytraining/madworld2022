@@ -43,6 +43,16 @@ $(function() {
 &lt;link rel="stylesheet" href="../scripts/tablesorter/dist/css/theme.blue.min.css" /&gt;
 &lt;/head&gt;</MadCap:codeSnippetBody>
         </MadCap:codeSnippet>
+        <h2>Include the script reference in snippet</h2>
+        <p>It's not enough for the script to only exist in the file structure. We need to tell the browser to actually load the javascript files. We're going to add them to the <code>include-at-top-of-all-pages.flsnp</code> file. </p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetCaption>
+                <p>Add to include-at-top-of-allpages.flsnp snippet</p>
+            </MadCap:codeSnippetCaption>
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="True" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve" style="mc-code-lang: HTML;">&lt;script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.js"&gt;&lt;/script&gt;
+&lt;script src="../../scripts/tablesorter/dist/js/jquery.tablesorter.widgets.js"&gt;&lt;/script&gt;</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
         <h2>Installation Instructions</h2>
         <ol>
             <li>Copy the <code>tablesorter</code> folder to your <code>scripts</code> folder. (Create in<code> Content\Resoources\scripts</code> if it doesn't exist.)</li>
@@ -51,6 +61,9 @@ $(function() {
             </li>
             <li>
                 <p>In all your template pages that will contain tables, add the reference above to the end of the <code>head</code> section. </p>
+            </li>
+            <li>
+                <p>In the <code>Content/Resources/Snipets/UI&#160;Elements</code> folder, edit the <code>include-at-top-of-all-pages.flsnp</code> file, adding the scripts above to the list of scripts there. </p>
             </li>
             <li>
                 <p>Build your primary target and test by scrolling down this page.</p>
